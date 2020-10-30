@@ -1,0 +1,8 @@
+apiVersion: zookeper.example.com/v1
+kind: ZooKeeper
+metadata:
+  name: zookeeper-example
+spec:
+  replicas: 3
+  image_name: k8s.gcr.io/kubernetes-zookeeper
+  image_tag: 1.0-3.4.10

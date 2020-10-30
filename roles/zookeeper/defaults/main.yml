@@ -1,0 +1,10 @@
+---
+# defaults file for ZooKeeper
+zookeeper_name: zookeeper-example
+image_name: registry.access.redhat.com/amq7/amq-streams-zookeeper
+image_tag: latest
+replicas: 1
+memory_request: "1Gi"
+cpu_request: "0.5"
+volume_size: "1Gi"
+storage_class: "anything"

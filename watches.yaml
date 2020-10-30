@@ -1,0 +1,7 @@
+---
+# Use the 'create api' subcommand to add watches to this file.
+- version: v1
+  group: zookeper.example.com
+  kind: ZooKeeper
+  role: zookeeper
+# +kubebuilder:scaffold:watch

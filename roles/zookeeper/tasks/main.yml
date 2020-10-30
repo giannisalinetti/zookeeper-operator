@@ -1,0 +1,33 @@
+---
+# tasks file for ZooKeeper
+- name: Ensure ZooKeeper server and leader-election headless service is created
+  community.kubernetes.k8s:
+    state: present
+    template: "templates/headless_service.yaml.j2"
+    namespace: "{{ ansible_operator_meta.namespace }}"
+    wait: True
+    wait_timeout: 120
+
+- name: Ensure ZooKeeper client service is created
+  community.kubernetes.k8s:
+    state: present
+    template: "templates/service.yaml.j2"
+    namespace: "{{ ansible_operator_meta.namespace }}"
+    wait: True
+    wait_timeout: 120
+
+- name: Ensure PodDisruptionBudget is created
+  community.kubernetes.k8s:
+    state: present
+    template: "templates/poddisruptionbudget.yaml.j2"
+    namespace: "{{ ansible_operator_meta.namespace }}"
+    wait: True
+    wait_timeout: 120
+
+- name: Ensure ZooKeeper statefulset is created
+  community.kubernetes.k8s:
+    state: present
+    template: "templates/statefulset.yaml.j2"
+    namespace: "{{ ansible_operator_meta.namespace }}"
+    wait: True
+    wait_timeout: 120

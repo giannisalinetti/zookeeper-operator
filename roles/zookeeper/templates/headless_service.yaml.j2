@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ zookeeper_name }}
+  name: {{ zookeeper_name }}-headless
+spec:
+  clusterIP: None
+  ports:
+  - name: server
+    port: 2888
+    protocol: TCP
+    targetPort: 2888
+  - name: leader-election
+    port: 3888
+    protocol: TCP
+    targetPort: 3888
+  selector:
+    app.kubernetes.io/name: {{ zookeeper_name }}
+  sessionAffinity: None
+  type: ClusterIP
+

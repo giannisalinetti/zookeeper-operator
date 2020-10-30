@@ -1,0 +1,12 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ zookeeper_name }}
+  name: {{ zookeeper_name }}-pdb
+spec:
+  selector:
+    matchLabels:
+      app: {{ zookeeper_name }}
+  maxUnavailable: 1
+

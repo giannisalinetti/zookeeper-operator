@@ -1,0 +1,8 @@
+domain: example.com
+layout: ansible.sdk.operatorframework.io/v1
+projectName: zookeeper-operator
+resources:
+- group: zookeper
+  kind: ZooKeeper
+  version: v1
+version: 3-alpha
