@@ -73,9 +73,10 @@ Contributions to this project are welcome.
 ### TODO
 - Check (and potentially fix) number of replicas to guarantee quorum (1,3,5,etc)
 - Implement extra sanity checks on the cluster
+- Implement Molecule testing
 
 ## Maintainers
-- Gianni Salinetti, Cloud Solution Architect
+- Gianni Salinetti, Cloud Solution Architect  
   e-mail: <gsalinet@redhat.com>
 
 
