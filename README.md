@@ -70,9 +70,12 @@ $ kubectl delete crd/zookeepers.zookeeper.example.com
 ## Contributing
 Contributions to this project are welcome.
 
+### TODO
+- Check (and potentially fix) number of replicas to guarantee quorum (1,3,5,etc)
+- Implement extra sanity checks on the cluster
+
 ## Maintainers
-- Gianni Salinetti  
-  Cloud Solution Architect  
-  <gsalinet@redhat.com>
+- Gianni Salinetti, Cloud Solution Architect
+  e-mail: <gsalinet@redhat.com>
 
 
