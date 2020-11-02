@@ -1,5 +1,20 @@
 ---
-# tasks file for ZooKeeper
+- name: Ensure AnyUid SCC is bound to the namespace Role
+  community.kubernetes.k8s:
+    state: present
+    template: "templates/role.yaml.j2"
+    namespace: "{{ ansible_operator_meta.namespace }}"
+    wait: True
+    wait_timeout: 120
+
+- name: Ensure Role is bound to namespace RoleBinding
+  community.kubernetes.k8s:
+    state: present
+    template: "templates/rolebinding.yaml.j2"
+    namespace: "{{ ansible_operator_meta.namespace }}"
+    wait: True
+    wait_timeout: 120
+
 - name: Ensure ZooKeeper server and leader-election headless service is created
   community.kubernetes.k8s:
     state: present
